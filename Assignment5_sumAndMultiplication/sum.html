@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sum of n Numbers</title>
+  <script type='text/javascript'>
+    function addSum() {
+      alert("Enter a list of numbers. Click 'Cancel' to stop adding.");
+
+      var sumOfNums = 0;
+      var userInput;
+
+      while ((userInput = prompt("Enter a number (or press Cancel to finish): ")) !== null) {
+        // Check for valid numeric input (avoid NaN)
+        if (!isNaN(parseFloat(userInput))) {
+          sumOfNums += parseFloat(userInput);
+        } else {
+          alert("Please enter a valid number.");
+        }
+      }
+
+      if (sumOfNums > 0) {
+        alert("The sum of all your numbers is: " + sumOfNums);
+      } else {
+        alert("No numbers were entered.");
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <form name="frm">
+    <input type="button" value="Sum of n Numbers" onclick="addSum()">
+  </form>
+</body>
+
+</html>
